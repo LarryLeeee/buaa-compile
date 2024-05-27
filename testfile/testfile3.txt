@@ -1,0 +1,61 @@
+int globalVar1 = 1, globalVar2 = 2, globalVar3 = 3;
+int globalArrDim1[6 / 3] = {1, 2};//check arr
+int globalArrDim2[1 + 1][8 - 2 * 3] = {{1, 1},
+                                       {1, 1}};
+
+/*
+we need many lines
+check various notes
+这份程序覆盖了常量与变量定义的普通变量、一维数组、二维数组
+以及左值表达式的三种情况：普通变量、一维数组和二维数组
+定义了一个函数
+*/
+
+const int globalConst1 = 2;
+const int globalConstArr[3] = {3 + 4 / 2, 6 % 3, 23};
+
+int main() {
+    printf("20373043\n");
+    const int constVar1 = 2;
+    int Var1 = 10 - globalVar3 % 2 * (globalVar2 + globalArrDim1[1] / globalArrDim2[0][1] - 1);
+    const int constArrDim1[2] = {1, 32};
+    const int constArrDim2[1][6] = {{1, 2, 3, 4, 5, 6}};
+    const int constVar2 = constArrDim2[2 / 3][2 % 3], constVar3 =
+            6 * globalConstArr[2] + 3, constVar4 = constArrDim1[1];
+    const int j = 2, k = 3;
+    printf("%d\n", constVar2 * constVar4 - constVar3);
+    printf("%d,%d\n", constVar1, constArrDim1[1]);
+    int a[2][2] = {{1, 2},
+                   {3, 4}};
+    int b[2][2] = {{a[0][0], a[0][1]},
+                   {a[1][0], a[1][1]}};
+    int i, use2 = constVar1;
+    i = globalVar1;
+    while (i < 4 + globalVar2) {
+        i = i + 1;
+        if (i % globalConst1 == 0) {
+            break;
+        }
+    }
+    int sum = 0;
+    while (i < 4 + globalVar2) {
+        sum = sum + constArrDim2[0][i];
+        i = i + 1;
+        if (i % globalVar3 == 0) {
+            continue;
+        }
+    }
+    int _lsz = 3;
+    printf("%d,%d,abc%d\n", _lsz, i, sum);
+    printf("asd\n");
+    printf("continue;\n");
+    printf("max:%d\n", constVar1);
+    int input;
+    input = getint();
+    globalArrDim2[1][1] = input;
+    globalArrDim1[1] = globalArrDim2[1][0] + input;
+    printf("%d\n", globalArrDim1[1] + globalArrDim2[1][0]);
+    printf("%d\n", globalArrDim2[1][1]);
+    printf("end");
+    return 0;
+}

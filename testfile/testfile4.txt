@@ -1,0 +1,37 @@
+int q[20], flag[20];
+
+void arrange(int m, int len) {
+    int j, k;
+    if (m > len) {
+        j = 1;
+        while (j <= len) {
+            printf("%d ", q[j]);
+            j = j + 1;
+        }
+        printf("\n");
+    } else {
+        k = 1;
+        while (k <= len) {
+            if (flag[k] == 0) {
+                flag[k] = 1;
+                q[m] = k;
+                arrange(m + 1, len);
+                flag[k] = 0;
+            }
+            k = k + 1;
+        }
+    }
+}
+
+int main() {
+    printf("20373043\n");
+    int n;
+    n = getint();
+    arrange(1, n);
+    printf("%d\n", n);
+    printf("end\n");
+    printf("2037");
+    return 0;
+}
+
+

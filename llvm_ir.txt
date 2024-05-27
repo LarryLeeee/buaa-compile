@@ -1,0 +1,21 @@
+declare i32 @getint()
+declare void @putint(i32)
+declare void @putch(i32)
+declare void @putstr(i8*)
+
+
+define dso_local i32 @main(){
+
+B11_inline:
+	%v11_inline = alloca i32
+	%v12_inline = call i32 @getint()
+	store i32 %v12_inline, i32* %v11_inline
+	%v13_inline = alloca i32
+	%v14_inline = call i32 @getint()
+	store i32 %v14_inline, i32* %v13_inline
+	%v15_inline = load i32, i32* %v11_inline
+	%v16_inline = load i32, i32* %v13_inline
+	%v17_inline = and i32 %v15_inline,%v16_inline
+	call void @putint(i32 %v17_inline)
+	ret i32 0
+}

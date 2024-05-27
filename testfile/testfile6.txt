@@ -1,0 +1,35 @@
+
+
+int a[15][15], i, j, n, m, visit[15];
+
+void dfs(int x) {
+    printf("%d\n", x);
+    visit[x] = 1;
+    int k = 1;
+    printf("x:%d ", x);
+    while (k <= n) {
+        if (a[x][k] && visit[k] == 0) {
+            printf("k:%d\n", k);
+            dfs(k);
+        } else {
+
+        }
+        k = k + 1;
+    }
+}
+
+int main() {
+    printf("20373043\n");
+    n = getint();
+    m = getint();
+    while (m != 0) {
+        m = m - 1;
+        i = getint();
+        j = getint();
+        a[i][j] = 1;
+        a[j][i] = 1;
+    }
+    dfs(1);
+    printf("\nend");
+    return 0;
+}

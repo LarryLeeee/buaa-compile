@@ -1,0 +1,31 @@
+.data
+.text
+	lui $3, 0x1000
+	jal main
+	li $v0,10
+	syscall
+main:
+B11_inline:
+	subi $sp, $sp, 16
+	addiu $1, $0, 4
+	add $1, $1, $sp
+	sw $1, 0($sp)
+	li $v0, 5
+	syscall
+	add $5, $v0, $0
+	sw $5, 0($sp)
+	addiu $1, $0, 12
+	add $1, $1, $sp
+	sw $1, 8($sp)
+	li $v0, 5
+	syscall
+	add $6, $v0, $0
+	sw $6, 8($sp)
+	lw $7, 0($sp)
+	lw $8, 8($sp)
+	add $a0, $0, null
+	li $v0, 1
+	syscall
+	addiu $a0, $0, 0
+	add $sp, $sp, 16
+	jr $ra

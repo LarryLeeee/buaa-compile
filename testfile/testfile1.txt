@@ -1,0 +1,67 @@
+
+//这份用来覆盖复杂条件的运算和判断，要遵守短路求值的规则
+int globalVar1 = 1, globalVar2 = 2, globalVar3 = 3;
+int globalArrDim1[6 / 3] = {1, 2};//check arr
+int globalArrDim2[
+        1 + 1][8 - 2 * 3] = {{1, 1},
+                             {1, 1}};
+
+const int globalConst1 = 2;
+const int globalConstArr[3] = {3 + 4 / 2, 6 % 3, 0};
+
+int global_var = 0;
+
+int func() {
+    global_var = global_var + 1;
+    return global_var;
+}
+
+int func1() {
+    ;;;;
+    global_var = global_var + 1;
+    return 1;
+}
+
+int main() {
+    int x;
+    x = getint();
+    printf("20373043\n");
+    if (0 && func()) {
+        x = x + 1;
+    }
+    printf("%d\n", x);
+    if (1 || func1()) { ;
+    }
+    int i = 0, sum = 0;
+    while (i < 10) {
+        if (i % 2 == 1) {
+            sum = sum + i;
+        }
+        i = i + 1;
+    }
+    printf("%d\n", sum);
+    int a1 = 1, b1 = 2, c1 = 3, d1 = 4, e5 = 5;
+    while (i < 12) {
+        if (a1 + b1 <= c1) {
+            printf("%d\n", c1);
+            if (d1 * e5 >= c1) {
+                printf("%d\n", d1);
+            } else {
+                if (b1 + c1 != e5) {
+                    printf("%d\n", e5);
+                }
+            }
+        } else {
+            printf("%d\n", a1);
+            if (b1 > a1 || c1 >= d1 && !e5) {
+                printf("%d\n", x);
+            }
+        }
+        printf("%d\n", x);
+        i = i + 1;
+    }
+    x = 0 + -i;
+    x = x - +i;
+    printf("x:%d", x);
+    return 0;
+}
